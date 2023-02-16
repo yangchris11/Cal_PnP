@@ -205,7 +205,7 @@ bool CCfg::rdBool(std::string strCfg, int nParamPos)
 	nBoolVal = std::atoi(strCfg.substr(nValPos, nValLen).c_str());
 	if (nBoolVal > 0)
 		return true;
-	else if (nBoolVal <= 0)
+	else // if (nBoolVal <= 0)
 		return false;
 }
 

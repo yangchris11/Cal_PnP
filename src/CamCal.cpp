@@ -318,7 +318,7 @@ void CCamCal::pltDispGrd(void)
 	{
 		char acPtIdx[32];
 		cv::circle(oImgPlt, m_vo2dPt[i], 6, cv::Scalar(255, 0, 0), 1, CV_AA);  // draw the circle
-		std::sprintf(acPtIdx, "%d", i);
+		std::snprintf(acPtIdx, 32, "%d", i);
 		cv::putText(oImgPlt, acPtIdx, m_vo2dPt[i], cv::FONT_HERSHEY_SIMPLEX, 1, cv::Scalar(255, 255, 255), 2);
 	}
 
@@ -415,6 +415,7 @@ std::vector<cv::Point> C2dPtSel::process(void)
 			}
 		}
 	}
+	return voVanPt;
 }
 
 void C2dPtSel::addNd(int nX, int nY)
@@ -427,7 +428,7 @@ void C2dPtSel::addNd(int nX, int nY)
 	m_voNd.push_back(oCurrNd);
 	// std::cout << "current node(" << oCurrNd.x << "," << oCurrNd.y << ")" << std::endl;	// for debug
 	cv::circle(m_oImgFrm, oCurrNd, 6, cv::Scalar(255, 0, 0), 1, CV_AA);  // draw the circle
-	std::sprintf(acNdIdx, "%d", (int)(m_voNd.size() - 1));
+	std::snprintf(acNdIdx, 32, "%d", (int)(m_voNd.size() - 1));
 	cv::putText(m_oImgFrm, acNdIdx, oCurrNd, cv::FONT_HERSHEY_SIMPLEX, 1, cv::Scalar(255, 255, 255), 2);
 	cv::imshow("selector of 2D points", m_oImgFrm);
 }
