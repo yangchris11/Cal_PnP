@@ -1,5 +1,21 @@
 # Cal_PnP
 
+
+
+## Note
+
+I used the command
+
+```
+g++ -I/opt/homebrew/Cellar/opencv@3/3.4.16_5/include/ -L/opt/homebrew/Cellar/opencv@3/3.4.16_5/lib -g -o bin ./src/main.cpp ./src/Cfg.cpp ./src/CamCal.cpp -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_imgcodecs -lopencv_calib3d -lm
+```
+
+to compile.
+
+
+
+
+
 This repository contains our C++ implementation of semi-automatic camera calibration based on Perspective-n-Point (PnP). It can be used to compute the homography matrix and manually correct radial distortion. 
 
 ## Introduction
