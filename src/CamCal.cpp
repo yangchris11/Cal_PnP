@@ -308,10 +308,10 @@ void CCamCal::pltDispGrd(void)
 
 	// draw grid lines on the frame image
 	for (int i = 0; i < oDispGrdDim.width; i++)
-		cv::line(oImgPlt, vo2dGrdPtTop[i], vo2dGrdPtBtm[i], cv::Scalar(int(255.0 * ((double)i / (double)oDispGrdDim.width)), 127, 127), 2, CV_AA);
+		cv::line(oImgPlt, vo2dGrdPtTop[i], vo2dGrdPtBtm[i], cv::Scalar(int(255.0 * ((double)i / (double)oDispGrdDim.width)), 127, 127), 1, CV_AA);
 
 	for (int i = 0; i < oDispGrdDim.width; i++)
-		cv::line(oImgPlt, vo2dGrdPtLft[i], vo2dGrdPtRgt[i], cv::Scalar(127, 127, int(255.0 * ((double)i / (double)oDispGrdDim.width))), 2, CV_AA);
+		cv::line(oImgPlt, vo2dGrdPtLft[i], vo2dGrdPtRgt[i], cv::Scalar(127, 127, int(255.0 * ((double)i / (double)oDispGrdDim.width))), 1, CV_AA);
 
 	// plot the 2D points
 	for (int i = 0; i < m_vo2dPt.size(); i++)
